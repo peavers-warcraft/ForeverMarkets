@@ -1,0 +1,17 @@
+## Interface: 120105, 16001
+## Title: ForeverMarkets
+## Notes: Records your gold, stock, auction house searches and trades for the Forever Markets website, carries out the plan it sends, and finds vendor flips.
+## Author: Peavers
+## Version: 0.2.0
+## SavedVariables: ForeverMarketsDB
+## OptionalDeps: ForeverMarkets_Data
+## X-Source-Code: https://github.com/peavers-warcraft/ForeverMarkets
+# X-Courier-Id names our Courier developer: Courier uploads ForeverMarketsDB, and writes the plans
+# into ForeverMarkets_Data, only for the developer this line names. It is the production developer
+# "Forever Markets". Change it only together with the server's keys (wow-commodity-archive SSM),
+# and a .toc change needs a client restart, not just /reload.
+## X-Courier-Id: dev_01M7M44FSYKNN6D3577PD3MB0S
+
+ForeverMarkets.lua
+Plan.lua
+Flips.lua

@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ForeverMarkets
+  description: "A World of Warcraft addon that records what you see and trade at the auction house, and carries out the buy and sell plan the Forever Markets website sends."
+  annotations:
+    github.com/project-slug: peavers-warcraft/ForeverMarkets
+spec:
+  type: library
+  lifecycle: experimental
+  owner: peavers-warcraft

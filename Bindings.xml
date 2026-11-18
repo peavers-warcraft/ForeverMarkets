@@ -1,0 +1,8 @@
+<Bindings>
+	<Binding name="FOREVERMARKETS_NEXT" header="FOREVERMARKETS" category="ADDONS">
+		ForeverMarkets_Next()
+	</Binding>
+	<Binding name="FOREVERMARKETS_FLIP" category="ADDONS">
+		ForeverMarkets_Flip()
+	</Binding>
+</Bindings>
