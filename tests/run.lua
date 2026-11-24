@@ -1,5 +1,7 @@
 -- Drives ForeverMarkets.lua through a fake 12.1.5 client: run from addon/ with `lua tests/run.lua`.
 -- WoW's UI can't be run here, so this is how the addon's records are checked.
+-- The fake client swaps its own functions out per case, and runs on any Lua from 5.1 up.
+---@diagnostic disable: duplicate-set-field, deprecated
 
 local failures = 0
 local function check(name, ok)

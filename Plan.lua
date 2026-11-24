@@ -201,7 +201,7 @@ render = function()
         return
     end
     local i, step, p = nextStep()
-    if not i then
+    if not i or not step or not p then
         title:SetText("Plan done")
         local c = character()
         say(c and c.vendor and next(c.vendor)
@@ -576,7 +576,7 @@ function ForeverMarkets_Next()
         return
     end
     local i, step = nextStep()
-    if not i or not panel or not panel:IsShown() then
+    if not i or not step or not panel or not panel:IsShown() then
         if ns.flipNext then
             ns.flipNext()
         end
@@ -650,7 +650,7 @@ local function build()
     skip:SetText("Skip")
     skip:SetScript("OnClick", function()
         local i, _, p = nextStep()
-        if i then
+        if i and p then
             p.done[i] = true
             state = {}
         end
@@ -660,7 +660,7 @@ end
 
 local function current(kind)
     local i, step, p = nextStep()
-    if i and step.kind == kind then
+    if i and step and step.kind == kind then
         return i, step, p
     end
 end
@@ -686,7 +686,7 @@ end)
 
 ns.listen("COMMODITY_SEARCH_RESULTS_UPDATED", function(itemID)
     local i, step, p = current("buy")
-    if not i or state.phase ~= "searching" or itemID ~= step.item then
+    if not i or not step or not p or state.phase ~= "searching" or itemID ~= step.item then
         return
     end
     local limit = limitOf(step)
@@ -745,7 +745,7 @@ end)
 
 ns.listen("COMMODITY_PURCHASE_SUCCEEDED", function()
     local i, step, p = current("buy")
-    if not i or state.phase ~= "buying" or ns.buyer ~= "plan" then
+    if not i or not step or not p or state.phase ~= "buying" or ns.buyer ~= "plan" then
         return
     end
     p.bought[i] = (p.bought[i] or 0) + state.quantity
@@ -770,7 +770,7 @@ end)
 
 ns.listen("AUCTION_HOUSE_AUCTION_CREATED", function(auctionID)
     local i, step, p = current("sell")
-    if not i or state.phase ~= "posting" then
+    if not i or not step or not p or state.phase ~= "posting" then
         return
     end
     -- The main file has just recorded the listing as a fill: add what it was and what it cost.
