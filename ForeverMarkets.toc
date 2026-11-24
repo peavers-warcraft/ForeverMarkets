@@ -2,7 +2,7 @@
 ## Title: ForeverMarkets
 ## Notes: Records your gold, stock, auction house searches and trades for the Forever Markets website, carries out the plan it sends, and finds vendor flips.
 ## Author: Peavers
-## Version: 0.2.1
+## Version: 0.2.2
 ## SavedVariables: ForeverMarketsDB
 ## OptionalDeps: ForeverMarkets_Data
 ## X-Source-Code: https://github.com/peavers-warcraft/ForeverMarkets
